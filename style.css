@@ -4,28 +4,14 @@
     box-sizing: border-box;
 }
 
-body {
+body{
+    text-align: center;
+    background-color: beige;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: 0;
-    background-color: lavender;
-    color: purple;
-    font-family: Arial, sans-serif;
-}
-
-#score {
-    margin-bottom: 10px;
-    font-size: 24px;
-}
-
-#gameCanvas {
-    width: 400;
-    height: 400;
-}
-
-canvas{
-    border: 1px solid black;
+    flex-direction: column;
+    position: fixed;
+    width: 100%;
 }
