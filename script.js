@@ -111,6 +111,19 @@ function oppdater() {
         console.log("Spilleren scoret! Poeng:", spiller.score);
         resetBall();
     }
+
+     // beveg datamaskinens paddel
+     if (datamaskin.y + datamaskin.height / 2 < ball.y) {
+        datamaskin.y += datamaskin.dy;
+    } else {
+        datamaskin.y -= datamaskin.dy;
+    }
+
+    // hindre paddlene fra å gå ut av canvas
+    if (spiller.y < 0) spiller.y = 0;
+    if (spiller.y + spiller.height > canvas.height) spiller.y = canvas.height - spiller.height;
+    if (datamaskin.y < 0) datamaskin.y = 0;
+    if (datamaskin.y + datamaskin.height > canvas.height) datamaskin.y = canvas.height - datamaskin.height;
 }
 
 //function tegn() for å tegne elementene
