@@ -10,21 +10,40 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: 0;
     background: white;
+    background-image: url(https://png.pngtree.com/background/20230411/original/pngtree-the-open-basketball-court-in-park-aerial-drone-top-view-photo-picture-image_2386053.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+h1
+{
+    font-weight: 400;
+    font-size: 50px;
+    color: black;
+    text-transform: uppercase;
+    letter-spacing: 3px;
 }
 
 canvas {
-    background: lightblue;
+    background-image: url(brett.jpg);
     border: 1px solid black;
+    background-size: cover;
+    background-position: center;
+    height: 450px;
+    width: 820px;
+    margin-bottom: 40px;
 }
 
 #startButton {
+    background-color: white;
+    color: black;
     position: absolute;
-    top: 50%;
+    top: 52%;
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 10px 20px;
     font-size: 35px;
+    text-transform: uppercase;
     cursor: pointer;
 }
