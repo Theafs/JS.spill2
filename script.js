@@ -14,7 +14,7 @@ const spiller = {
     width: paddleBredde,
     height: paddleHøyde,
     color: 'white',
-    dy: 10,
+    dy: 20,
     score: 0
 };
 
@@ -25,7 +25,7 @@ const datamaskin = {
     width: paddleBredde,
     height: paddleHøyde,
     color: 'white',
-    dy: 5,
+    dy: 2,
     score: 0
 };
 
@@ -83,6 +83,12 @@ function resetBall() {
 
 //spilltilstand
 function oppdater() {
+
+    if (spiller.score >= 5 || datamaskin.score >= 5) {
+        console.log("Spillet er over!");
+        return; // Stopper spillet ved å ikke kalle requestAnimationFrame(spillLoop)
+    }
+    
     ball.x += ball.dx;
     ball.y += ball.dy;
 
@@ -94,7 +100,7 @@ function oppdater() {
 
     //ball treffer paddel
     if (ball.x - ball.radius < spiller.x + spiller.width && ball.y > spiller.y && ball.y < spiller.y + spiller.height) {
-        ball.dx *= -1;
+        ball.dx *= -1.1;
         console.log("Ballen traff spillerens paddle");
     } else if (ball.x + ball.radius > datamaskin.x && ball.y > datamaskin.y && ball.y < datamaskin.y + datamaskin.height) {
         ball.dx *= -1;
@@ -150,3 +156,13 @@ start.addEventListener('click', () => {
     bevegPaddle(spiller, 38, 40);
     spillLoop();
 });
+
+
+
+let retryButton = document.createElement("button");
+        retryButton.innerText = "Prøv igjen";
+        retryButton.classList.add("retry-button");
+        retryButton.addEventListener("click", function () {
+            location.reload();
+        });
+        document.body.appendChild(retryButton);

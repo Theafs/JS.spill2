@@ -10,7 +10,6 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: white;
     background-image: url(https://png.pngtree.com/background/20230411/original/pngtree-the-open-basketball-court-in-park-aerial-drone-top-view-photo-picture-image_2386053.jpg);
     background-size: cover;
     background-position: center;
@@ -20,9 +19,10 @@ h1
 {
     font-weight: 400;
     font-size: 50px;
-    color: black;
+    color: white;
     text-transform: uppercase;
     letter-spacing: 3px;
+    margin-top: 10px;
 }
 
 canvas {
@@ -31,12 +31,12 @@ canvas {
     background-size: cover;
     background-position: center;
     height: 450px;
-    width: 820px;
-    margin-bottom: 40px;
+    width: 830px;
+    margin-bottom: 50px;
+    margin-left: 10px;
 }
 
 #startButton {
-    background-color: white;
     color: black;
     position: absolute;
     top: 52%;
@@ -46,4 +46,21 @@ canvas {
     font-size: 35px;
     text-transform: uppercase;
     cursor: pointer;
+}
+
+.retry-button{
+    color: black;
+    position: absolute;
+    top: 50px;
+    left: 85%;
+    font-size: 15px;
+    padding: 10px;
+    transition: background-color 0.3s, transform 0.3s;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+ 
+.retry-button:hover{
+    background-color: white;
+    transform: scale(1.05);
 }
