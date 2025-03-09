@@ -88,7 +88,7 @@ function oppdater() {
         console.log("Spillet er over!");
         return; // Stopper spillet ved å ikke kalle requestAnimationFrame(spillLoop)
     }
-    
+
     ball.x += ball.dx;
     ball.y += ball.dy;
 
@@ -147,6 +147,20 @@ function spillLoop() {
     oppdater();
     tegn();
     requestAnimationFrame(spillLoop);
+}
+
+//melding om vinner
+
+function spillLoop() {
+    oppdater();
+    tegn();
+
+    if (spiller.score < 5 && datamaskin.score < 5) {
+        requestAnimationFrame(spillLoop);
+    } else {
+        melding.innerText = spiller.score >= 5 ? "Du vant!" : "Du tapte!";
+        melding.style.display = "block";
+    }
 }
 
 //starter spillet
